@@ -6,9 +6,17 @@ using UnityEngine.UI;
 public class ProgressBar : MonoBehaviour
 {
     public Scrollbar Progress;
-    public bool is_progress_done;
     public float time_left;
     public float total_time;
+
+    public struct notes
+    {
+        public string key;
+        public long duration;
+        public long start_time; 
+    };
+
+    public List<List<notes>> song;
 
     void Start()
     {
@@ -30,7 +38,9 @@ public class ProgressBar : MonoBehaviour
             Progress = GameObject.Find("ProgressBar").GetComponent<Scrollbar>();
             Progress.size += 1.0f;
        
+
     }
+
 }
 
         
